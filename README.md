@@ -5,15 +5,15 @@ GettingCleaningData-run_analysis
 
 <br />
 
-##### Table of Contents  
-[What is it?](#What)
-[Downloading and Installation](#Install)
-[Libs](#Libs)
-[Example of Use](#Use)
-[Documentation](#Doc)
-[Documentation: Non-GitHub Data Download](#Doc-noGH)
-[Inside the Code: The Nitty-Gritty](#Code)
-[Other Information](#Other)
+<h4>Table of Contents</h4>
+[What is it?](#What)<br />
+[Downloading and Installation](#Install)<br />
+[Necessary Libraries](#Libs)<br />
+[Example of Use](#Use)<br />
+[Documentation](#Doc)<br />
+[Documentation: Non-GitHub Data Download](#Doc-noGH)<br />
+[Inside the Code: The Nitty-Gritty](#Code)<br />
+[Other Information](#Other)<br />
 <br /><br />
 
 
