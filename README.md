@@ -1,15 +1,17 @@
 GettingCleaningData-run_analysis
 ================================
 
-<h3>Coursera "Getting and Cleaning Data" Course Project - run_analysis() for the UCI Samsung Dataset</h3>
+<h3>Coursera Getting and Cleaning Data Course Project: run_analysis() for the UCI Samsung Dataset</h3>
+
+<br />
 
 
 <h4>What is it?</h4>
 ====================
-The run\_analysis.R code contains a function written for the Coursera *Getting and Cleaning Data* Course as part of the Data Science Specialization series. This is the README.md for this package.
+The run\_analysis.R code contains a function written for the Coursera *Getting and Cleaning Data* Course as part of the Data Science Specialization series. This is the README.md for this package. **The goal of run_analysis.R is to create a function to clean and tidy this data and give a summary of certain variables for each activity each subject performed.**
 
 As a brief overview, run\_analysis.R contains a defined function that can be sourced into R. Once sourced, the function run\_analysis() can be called. The function will use data downloaded from the University of California Irvine Machine Learning Repository, containing human activity recognition data collected by smartphones. run\_analysis() will analyze the dataset and produce a short summary in the form of a tidy dataset.
-
+<br /> <br />
 
 
 
@@ -38,6 +40,7 @@ and the folder /train/ should contain the following items:
     -rwxr-xr-x@      66006256   X_train.txt
     -rwxr-xr-x@         20152   subject_train.txt
     -rwxr-xr-x@         14704   y_train.txt
+<br /> <br />
 
 
 <h6>Necessary Libraries</h6>
@@ -48,7 +51,7 @@ The R libraries needed to use the provided code are plyr and doBy. **If not inst
     install.packages("plyr")
 
 The file run_analysis.R will attempt to load these packages initially, and an error will be thrown if they are not found.
-
+<br /> <br />
 
 
 <h6>Example of Use</h6>
@@ -74,7 +77,7 @@ If the user wishes to keep the tidy dataset as a dataframe in R for further use/
     df = run_analysis()
 
 For further explanatory information on variables and data, see the Codebook.md file.
-
+<br /> <br />
 
 
 
@@ -92,26 +95,30 @@ Smartlab - Non Linear Complex Systems Laboratory
 DITEN - UniversitÃ  degli Studi di Genova, Genoa I-16145, Italy. 
 activityrecognition '@' smartlab.ws 
 www.smartlab.ws 
+Data was made available on Dec 10 2012.
+Data was downloaded for the construction of run_analysis.R on June 11 2014.
 
-GIVE BRIEF EXPLANATION OF EXPERIMENT HERE
 
+The data was gathered from 30 volunteers (ages 19-48) who performed a variety of activities while a smartphone was attached at the waist. The data were recorded by the phone (a Samsung Galaxy SII) during six different activities: walking, walking upstairs, walking downstairs, sitting, standing, and laying. The phone's accelerometer and gyroscope recorded a variety of 3-dimensional measurements of velocity, acceleration, and angle.
+
+The raw time-series data from the smartphone was pre-processed by applying noise filters to smooth the data. A vector of features were recorded from the time and frequency domains of the data, giving a 561-feature vector of time and frequency variables. Data is also included to identify each individual participant and what activity was performed. The entire set of data gives 10299 observations of 561 variables. The goal of run_analysis.R is to create a function to clean and tidy this data and give a summary of certain variables for each activity each subject performed.
 
 The data files are listed here with a brief explanation of what they are. In the primary working folder directory, the following items are necessary, with the test and train subdirectories:
 
-- activity_labels.txt
-- features.txt
-- features_info.txt
-- run_analysis.R
-- test/
-- train/
+- activity_labels.txt: This file gives the dictionary code for which the activities (walking, standing, sitting, etc.) performed by the subjects are labeled in the data files.
+- features.txt: Included in this file are the column names for the X_*.txt files with the real numerical information gathered by the smartphone device
+- features\_info.txt: This file gives an explanation of the column naming convention given in the column names of features.txt
+- run\_analysis.R: The R function run\_analysis() to analyze the data is defined in this .R file
+- test/: This is a folder containing the "test" data (from 30% of the participants)
+- train/: This is a folder containing the "train" data (from the other 70% of the participants)
 
 The folders test/ and train/ should contain the following items:
 
-- X_test.txt
-- subject_test.txt
-- y_test.txt
+- X\_test.txt: Contains the rows of observations for a 561-feature vector with time and frequency domain variables, where the features are explained in features.txt and features\_info.txt
+- subject\_test.txt: Gives a participant subject identifier number (1 to 30) for each row of observation form X\_test.txt
+- y\_test.txt: Gives a participant activity ID number (1 to 6 for 6 different activities) as described in activity\_labels.txt
 
-  
+<br /> <br />
 
 
 
@@ -152,7 +159,7 @@ containing the following items:
     -rwxr-xr-x@         20152   subject_train.txt
     -rwxr-xr-x@         14704   y_train.txt
 
-
+<br /> <br />
 
 
 
@@ -165,7 +172,7 @@ containing the following items:
 
 
 
-
+<br /> <br />
 
 
 
@@ -174,7 +181,9 @@ containing the following items:
 ==========================================
 
 Author: RWK
+
 License: None, free to use and edit as people wish (*if* they wish).
+
 Contact: May be made through GitHub
 
 
