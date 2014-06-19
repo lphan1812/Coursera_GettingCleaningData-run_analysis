@@ -5,7 +5,19 @@ GettingCleaningData-run_analysis
 
 <br />
 
+##### Table of Contents  
+[What is it?](#What)
+[Downloading and Installation](#Install)
+[Libs](#Libs)
+[Example of Use](#Use)
+[Documentation](#Doc)
+[Documentation: Non-GitHub Data Download](#Doc-noGH)
+[Inside the Code: The Nitty-Gritty](#Code)
+[Other Information](#Other)
+<br /><br />
 
+
+<a name="What"/>
 <h4>What is it?</h4>
 ====================
 The run\_analysis.R code contains a function written for the Coursera *Getting and Cleaning Data* Course as part of the Data Science Specialization series. This is the README.md for this package. **The goal of run_analysis.R is to create a function to clean and tidy this data and give a summary of certain variables for each activity each subject performed.**
@@ -14,7 +26,7 @@ As a brief overview, run\_analysis.R contains a defined function that can be sou
 <br /> <br /><br />
 
 
-
+<a name="Install"/>
 <h4>Downloading and Installation</h4>
 =====================================
 
@@ -45,6 +57,7 @@ and the folder /train/ should contain the following items:
 <br /> <br />
 
 
+<a name="Libs"/>
 <h6>Necessary Libraries</h6>
 
 The R libraries needed to use the provided code are plyr and doBy. **If not installed, run the following lines in R**:
@@ -56,6 +69,7 @@ The file run_analysis.R will attempt to load these packages initially, and an er
 <br /> <br />
 
 
+<a name="Use"/>
 <h6>Example of Use</h6>
 
 For those readers/users who have taken part in the Coursera Getting and Cleaning Data course, the run_analysis.R file should be *in* the UCI HAR Dataset folder and run from *that* location. For those who are obtaining everything from GitHub, the setup should work as-is.
@@ -88,7 +102,7 @@ For further explanatory information on variables and data, see the Codebook.md f
 
 
 
-
+<a name="Doc"/>
 <h4>Documentation</h4>
 ======================
 
@@ -126,7 +140,7 @@ The folders test/ and train/ should contain the following items:
 
 
 
-
+<a name="Doc-noGH"/>
 <h4>Documentation: Non-GitHub Data Download</h4>
 ================================================
 
@@ -167,7 +181,7 @@ containing the following items:
 
 
 
-
+<a name="Code"/>
 <h4>Inside the Code: The Nitty-Gritty</h4>
 ==========================================
 Following is a description of the code itself, explaining the main steps and what R functions were used to achieve those steps. One may wish to follow along in the code, where the steps are labeled similarly.
@@ -201,7 +215,7 @@ Following is a description of the code itself, explaining the main steps and wha
 
 
 
-
+<a name="Other"/>
 <h4>Other Information</h4>
 ==========================================
 
