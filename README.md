@@ -20,6 +20,8 @@ As a brief overview, run\_analysis.R contains a defined function that can be sou
 
 The source code and necessary data files may all be downloaded as a zip, forked, or cloned on a local machine from the [GettingCleaningData-run_analysis](https://rwk506/GettingCleaningData-run_analysis) repository.
 
+For those readers/users who have taken part in the Coursera Getting and Cleaning Data course, the run_analysis.R file should be *in* the UCI HAR Dataset folder and run from *that* location. For those who are obtaining everything from GitHub, the setup should work as-is.
+
 More specifically, the necessary files are as follows. In the primary working folder directory, the following items are necessary, with the test and train subdirectories:
 
     -rwxr-xr-x@         80     activity_labels.txt
@@ -56,9 +58,11 @@ The file run_analysis.R will attempt to load these packages initially, and an er
 
 <h6>Example of Use</h6>
 
-The directory structure for the function **must** be set up described above in *Downlaoding and Installation* (or, alternatively, as in *Documentation: Non-GitHub Data Download*). If an error is occurring during use, check that the pathways follow as above.
+For those readers/users who have taken part in the Coursera Getting and Cleaning Data course, the run_analysis.R file should be *in* the UCI HAR Dataset folder and run from *that* location. For those who are obtaining everything from GitHub, the setup should work as-is.
 
-To use the function (while in R), it must first be sourced (as below). This may be called from the same location (re: directory/folder) that the run_analysis.R file is in. This may require a setwd("/your/path/here") from the R command line. This is essentially the "install" step.
+The directory structure for the function **must** be set up described above in *Downlaoding and Installation* (or, alternatively, as in *Documentation: Non-GitHub Data Download*). If an error occurs during use, check that the pathways are as above and that all necessary libraries are installed.
+
+To use the function (while in R), it must first be sourced (as below). This may be called from the same location (re: same directory or folder) that the run_analysis.R file is in. This may require a setwd("/your/path/here") from the R command line. This is essentially the "install" step.
 
     source("run_analysis.R")
 
@@ -70,7 +74,7 @@ Then, the function can be called from the R command line as:
 
     run_analysis()
 
-The output code will run the computations (as described, see *Inside the Code: The Nitty-Gritty*) and output an ascii text file called "tidy_data.txt". This data will contain the cleaned, tidy dataset conatining means of 79 different measurements (columns) for 180 observations (columns) (30 subjects and 6 activities = 180 observations).
+The output code will run the computations (as described, see *Inside the Code: The Nitty-Gritty*) and **create an ascii text file called "tidy_data.txt". This data will contain the cleaned, tidy dataset conatining means of 79 different measurements (columns) for 180 observations (columns) (30 subjects and 6 activities = 180 observations)**.
 
 If the user wishes to keep the tidy dataset as a dataframe in R for further use/manipulation, then the following example will save the tidy dataset as a dataframe in the user's R workspace:
 
