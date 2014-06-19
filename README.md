@@ -11,7 +11,7 @@ GettingCleaningData-run_analysis
 The run\_analysis.R code contains a function written for the Coursera *Getting and Cleaning Data* Course as part of the Data Science Specialization series. This is the README.md for this package. **The goal of run_analysis.R is to create a function to clean and tidy this data and give a summary of certain variables for each activity each subject performed.**
 
 As a brief overview, run\_analysis.R contains a defined function that can be sourced into R. Once sourced, the function run\_analysis() can be called. The function will use data downloaded from the University of California Irvine Machine Learning Repository, containing human activity recognition data collected by smartphones. run\_analysis() will analyze the dataset and produce a short summary in the form of a tidy dataset.
-<br /> <br />
+<br /> <br /><br />
 
 
 
@@ -77,7 +77,7 @@ If the user wishes to keep the tidy dataset as a dataframe in R for further use/
     df = run_analysis()
 
 For further explanatory information on variables and data, see the Codebook.md file.
-<br /> <br />
+<br /> <br /><br />
 
 
 
@@ -105,20 +105,20 @@ The raw time-series data from the smartphone was pre-processed by applying noise
 
 The data files are listed here with a brief explanation of what they are. In the primary working folder directory, the following items are necessary, with the test and train subdirectories:
 
-- activity_labels.txt: This file gives the dictionary code for which the activities (walking, standing, sitting, etc.) performed by the subjects are labeled in the data files.
-- features.txt: Included in this file are the column names for the X_*.txt files with the real numerical information gathered by the smartphone device
-- features\_info.txt: This file gives an explanation of the column naming convention given in the column names of features.txt
-- run\_analysis.R: The R function run\_analysis() to analyze the data is defined in this .R file
-- test/: This is a folder containing the "test" data (from 30% of the participants)
-- train/: This is a folder containing the "train" data (from the other 70% of the participants)
+- **activity_labels.txt**: This file gives the dictionary code for which the activities (walking, standing, sitting, etc.) performed by the subjects are labeled in the data files.
+- **features.txt**: Included in this file are the column names for the X_*.txt files with the real numerical information gathered by the smartphone device
+- **features\_info.txt**: This file gives an explanation of the column naming convention given in the column names of features.txt
+- **run\_analysis.R**: The R function run\_analysis() to analyze the data is defined in this .R file
+- **test/**: This is a folder containing the "test" data (from 30% of the participants)
+- **train/**: This is a folder containing the "train" data (from the other 70% of the participants)
 
 The folders test/ and train/ should contain the following items:
 
-- X\_test.txt: Contains the rows of observations for a 561-feature vector with time and frequency domain variables, where the features are explained in features.txt and features\_info.txt
-- subject\_test.txt: Gives a participant subject identifier number (1 to 30) for each row of observation form X\_test.txt
-- y\_test.txt: Gives a participant activity ID number (1 to 6 for 6 different activities) as described in activity\_labels.txt
+- **X\_test.txt**: Contains the rows of observations for a 561-feature vector with time and frequency domain variables, where the features are explained in features.txt and features\_info.txt
+- **subject\_test.txt**: Gives a participant subject identifier number (1 to 30) for each row of observation form X\_test.txt
+- **y\_test.txt**: Gives a participant activity ID number (1 to 6 for 6 different activities) as described in activity\_labels.txt
 
-<br /> <br />
+<br /> <br /><br />
 
 
 
@@ -159,20 +159,41 @@ containing the following items:
     -rwxr-xr-x@         20152   subject_train.txt
     -rwxr-xr-x@         14704   y_train.txt
 
-<br /> <br />
+<br /> <br /><br />
 
 
 
 
 <h4>Inside the Code: The Nitty-Gritty</h4>
 ==========================================
-- how I processed the data
-- what assumptions I made
-- why I did things a certain way
+Following is a description of the code itself, explaining the main steps and what R functions were used to achieve those steps. One may wish to follow along in the code, where the steps are labeled similarly.
 
+1. Read in test data and concatenate columns from subject\_test, y\_test, X\_test files into a single data set:
+    - Use read.table() to read in all files
+    - Make a dataframe, test\_df, of these three files using data.frame()
 
+2. Extract required columns (mean and std) from test\_df and label columns correctly:
+    - Read in the list of column names in features.txt with read.table() and add the column names "subject\_id","activity_id"
+    - Use gsub() to get rid of characters that are bad in R (like "(",  ")",  "-",  and  ",")
+    - Use grepl() to find column numbers of columns that have "mean" or "std" in the column name; this is a conservative cut to keep as many relevant mean or std columns as possible (though others may decide to keep more or fewer columns).
+    - Make a subset of test\_df (named test\_df\_cut) with only the column numbers that were found with grepl
 
-<br /> <br />
+3. Change activity ID (1 through 6) to actual labels of activities (WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING) :
+    - Use read.table() to read in activity table from activity\_labels.txt
+    - Use for loop to create and add new column containing appropriate activity labels
+
+4. Repeat step 1 for the "train" dataset (subject\_train, y\_train, X\_train)
+5. Repeat step 2 for the "train" dataset (subject\_train, y\_train, X\_train)
+6. Repeat step 3 for the "train" dataset (subject\_train, y\_train, X\_train) to obtain a train\_df\_cut dataframe
+
+7. Combine the test\_df\_cut and train\_df\_cut dataframes into one file (combined\_table) using rbind(). This is the cleaned dataset.
+
+8. Summarize the clean dataset combined\_table into a tidy dataset and write to a file:
+    - Summarize the dataset into a final\_table using summaryBy() (this is part of the doBy package!)
+    - Write the final clean and tidy dataset to a text file called tidy_set.txt using write.table()
+    - Return the final\_table as a dataframe
+
+<br /> <br /><br />
 
 
 
