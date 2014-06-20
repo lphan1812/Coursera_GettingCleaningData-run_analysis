@@ -1,7 +1,7 @@
 GettingCleaningData-run_analysis
 ================================
 
-<h3>Coursera Getting and Cleaning Data Course Project: run_analysis() for the UCI Samsung Dataset</h3>
+<h3>README.md for Coursera Getting and Cleaning Data Course Project: run_analysis() for the UCI Samsung Dataset</h3>
 
 <br />
 
