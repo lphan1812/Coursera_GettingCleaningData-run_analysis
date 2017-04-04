@@ -6,6 +6,7 @@ GettingCleaningData-run_analysis
 <br />
 
 <h4>Table of Contents</h4>
+
 [What is it?](#What)<br />
 [Downloading and Installation](#Install)<br />
 [Necessary Libraries](#Libs)<br />
@@ -19,7 +20,9 @@ GettingCleaningData-run_analysis
 
 <a name="What"/>
 <h4>What is it?</h4>
+
 ====================
+
 The run\_analysis.R code contains a function written for the Coursera *Getting and Cleaning Data* Course as part of the Data Science Specialization series. This is the README.md for this package. **The goal of run_analysis.R is to create a function to clean and tidy this data and give a summary of certain variables for each activity each subject performed.**
 
 As a brief overview, run\_analysis.R contains a defined function that can be sourced into R. Once sourced, the function run\_analysis() can be called. The function will use data downloaded from the University of California Irvine Machine Learning Repository, containing human activity recognition data collected by smartphones. run\_analysis() will analyze the dataset and produce a short summary in the form of a tidy dataset.
@@ -28,6 +31,7 @@ As a brief overview, run\_analysis.R contains a defined function that can be sou
 
 <a name="Install"/>
 <h4>Downloading and Installation</h4>
+
 =====================================
 
 The source code and necessary data files may all be downloaded as a zip, forked, or cloned on a local machine from the [GettingCleaningData-run_analysis](https://rwk506/GettingCleaningData-run_analysis) repository.
@@ -104,6 +108,7 @@ For further explanatory information on variables and data, see the Codebook.md f
 
 <a name="Doc"/>
 <h4>Documentation</h4>
+
 ======================
 
 The data used and available in the GettingCleaningData-run_analysis repository were taken from the publicly available dataset provided by the University of California Irvine Machine Learning Repository, as the ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). This data was sourced from the following study:
@@ -142,6 +147,7 @@ The folders test/ and train/ should contain the following items:
 
 <a name="Doc-noGH"/>
 <h4>Documentation: Non-GitHub Data Download</h4>
+
 ================================================
 
 If the data is downloaded separately (i.e.: from the UCI site, and not here on GitHub as a zipped file), then the directory structure for the function **must** be set up as follows, with the path:
@@ -183,7 +189,9 @@ containing the following items:
 
 <a name="Code"/>
 <h4>Inside the Code: The Nitty-Gritty</h4>
+
 ==========================================
+
 Following is a description of the code itself, explaining the main steps and what R functions were used to achieve those steps. One may wish to follow along in the code, where the steps are labeled similarly.
 
 1. Read in test data and concatenate columns from subject\_test, y\_test, X\_test files into a single data set:
@@ -217,6 +225,7 @@ Following is a description of the code itself, explaining the main steps and wha
 
 <a name="Other"/>
 <h4>Other Information</h4>
+
 ==========================================
 
 Author: RWK
